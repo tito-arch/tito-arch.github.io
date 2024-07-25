@@ -8,115 +8,128 @@
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
-        background-color: #000;
-        color: #fff;
+        background-color: #fff;
+        color: #000;
+        font-family: Arial, sans-serif;
       }
-
       h1 {
-        color: #fff;
+        color: #000;
+        font-family: "Pixelify Sans", sans-serif;
       }
-
+      h2 {
+        color: #000;
+      }
       img {
-        filter: grayscale(100%);
         max-width: 100%;
         height: auto;
       }
-
-      p {
-        color: #fff;
-      }
-
+      p,
       article {
-        color: #fff;
+        color: #000;
+        font-family: "Lucida console", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .flex-col > * + * {
+        margin-top: 1rem;
+      }
+      .section {
+        margin-bottom: 2rem;
       }
     </style>
   </head>
-
-  <body class="sm:w-3/4 mx-auto py-6 px-2">
-    <!-- my simple responsive portfolio page -->
-    <!-- top -->
-    <div>
-      <div>
-        <h1 class="text-center text-4xl">MWANGI IHWAGI TITUS</h1>
-        <div
-          class="flex-col sm:flex-row items-center justify-between py-4 gap-2 sm:w-3/4 mx-auto"
-        >
-          <div class="rounded bg-black w-1/2 h-auto">
-            <img
-              class="rounded-full bg-black w-full h-auto"
-              src="assets/Tito-headshot.jpeg"
-              alt="Tito Ihwagi Headshot"
-            />
-          </div>
-          <div class="w-3/4">
-            <p>
-              I am the creator of bunnieabc, co-founder of Influencer
-              Championship Boxing News. I also write regularly at bunnieabc.com,
-              also a Fullstack Engineer and a product designer.
-            </p>
-            <p>Age: 22</p>
-          </div>
-        </div>
-        <article>
-          <div class="flex-col mb-4">
-            <h2 class="text-2xl mb-2">How I see life</h2>
-            <p>
-              I'm not a school person, actually I hate school. I thought that
-              going attending some good school would bring me closer to the
-              people I wanted to be like. I was wrong. I wanted to meet people
-              who were passionate about what they were doing and finally find my
-              clan.
-            </p>
-            <p>
-              I still passed btw and got to understand a couple of algorithims
-              and some physics of how computers actually work
-            </p>
-          </div>
-          <div class="flex-col mb-4">
-            <h2 class="text-2xl mb-2">Passion for Innovation</h2>
-            <p>
-              I want to spend the rest of my life building companies doing deep
-              work that is hard to replicate, innovating, and making people's
-              lives easy. In my journey, I've learned that overlooking what
-              other companies have done thinking that your solution is the best
-              is a mistake. I believe in continuous learning and collaboration.
-              Now, I aim to meet other like-minded people and build solutions
-              that scale horizontally.
-            </p>
-          </div>
-          <div class="flex-col mb-4">
-            <h2 class="text-2xl mb-2">
-              Foundational software for tomorrow built today
-            </h2>
-            <p>
-              Curently I work at an AI startup, I never believed in Ai but then
-              came Generative Ai. We'll keep other projects private for now, we
-              are not building in public until some point in the future.
-            </p>
-            <p>
-              Mark my words, we are building the household companies the future
-              needs.
-            </p>
-            <p>
-              Still trying my best to work on complex algorithims and not write
-              garbage code.
-            </p>
-          </div>
-          <div class="flex-col mb-4">
-            <h2 class="text-2xl mb-2">Conclusion</h2>
-            <p>
-              I might as well write alot of unnecessary stuff here like how my
-              health went south. I'll say this though, when you are healthy you
-              can make decisions that are not based on fear. I'm not there yet
-              but I'm working on it. Been to many schools atleast more than six,
-              honestly they just tried to get one that I would fit in. See Yah!
-            </p>
-            <p>I love roasting people btw. Thamks passing by, I love you.</p>
-          </div>
-        </article>
+  <body class="content">
+    <!-- Header -->
+    <header class="text-center py-6">
+      <h1 class="text-6xl">ihwagi titus</h1>
+    </header>
+    <!-- Main content -->
+    <main>
+      <div class="w-full flex p-2 items-center justify-center">
+        <img
+          src="assets/Tito-headshot.jpeg"
+          alt="Tito Ihwagi Headshot"
+          class="rounded-full"
+        />
       </div>
-    </div>
+      <div class="flex-row items-center justify-center text-center gap-2">
+        <div class="w-full p-2">
+          <p>
+            I am the creator of bunnieabc, co-founder of Influencer Championship
+            Boxing News. I also write regularly at bunnieabc.com, also a
+            Fullstack Engineer and a product designer.
+          </p>
+          <p>Age: 22</p>
+        </div>
+      </div>
+      <article class="section">
+        <h2 class="text-2xl mb-2">How I see life</h2>
+        <p>
+          I'm not a school person, actually I hate school. I thought that going
+          attending some good school would bring me closer to the people I
+          wanted to be like. I was wrong. I wanted to meet people who were
+          passionate about what they were doing and finally find my clan.
+        </p>
+        <p>
+          I still passed btw and got to understand a couple of algorithms and
+          some physics of how computers actually work.
+        </p>
+      </article>
+      <article class="section">
+        <h2 class="text-2xl mb-2">Passion for Innovation</h2>
+        <p>
+          I want to spend the rest of my life building companies doing deep work
+          that is hard to replicate, innovating, and making people's lives easy.
+          In my journey, I've learned that overlooking what other companies have
+          done thinking that your solution is the best is a mistake. I believe
+          in continuous learning and collaboration. Now, I aim to meet other
+          like-minded people and build solutions that scale horizontally.
+        </p>
+      </article>
+      <article class="section">
+        <h2 class="text-2xl mb-2">
+          Foundational software for tomorrow built today
+        </h2>
+        <p>
+          Currently, I work at an AI start-up. I never believed in AI, but then
+          came Generative AI. We'll keep other projects private for now, we are
+          not building in public until some point in the future.
+        </p>
+        <p>
+          Mark my words, we are building the household companies the future
+          needs.
+        </p>
+        <p>
+          Still trying my best to work on complex algorithms and not write
+          garbage code.
+        </p>
+      </article>
+      <article class="section">
+        <h2 class="text-2xl mb-2">Conclusion</h2>
+        <p>
+          I might as well write a lot of unnecessary stuff here. Been to many
+          schools at least more than six, honestly, they just tried to get one
+          that I would fit in. See Yah!
+        </p>
+        <p>I love roasting people btw. Thanks for passing by, I love you.</p>
+      </article>
+      <foote class="text-center">
+        <p>Life at BunnieAbc ♥️  | Work at BunnieAbc | Blog | L&L | </p>
+        <hr class="m-4"/>
+        <p>&copy; Ihwagi 2024 |  Bunnieabc Foundation</p>
+      </foote>
+    </main>
   </body>
 </html>
