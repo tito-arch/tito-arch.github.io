@@ -145,11 +145,13 @@
           <div class="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center relative">
             <iframe 
               src="${project.link}" 
-              class="w-full h-full border-0"
+              class="w-full h-full border-0 pointer-events-none"
               loading="lazy"
               title="${project.name} preview"
               onload="this.style.display='block'"
-              onerror="this.style.display='none'">
+              onerror="this.style.display='none'"
+              sandbox="allow-scripts allow-same-origin"
+              style="pointer-events: none;">
             </iframe>
             <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center iframe-fallback">
               <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
