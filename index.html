@@ -3,7 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>M Titus</title>
+    <title>M Titus - Fullstack Engineer & Product Designer | BunnieAbc Creator</title>
+    <meta name="description" content="M Titus is a 22-year-old Fullstack Engineer, product designer, and creator of BunnieAbc. Co-founder of Calcurious.AI and passionate about building innovative solutions." />
+    <meta name="keywords" content="M Titus, Fullstack Engineer, Product Designer, BunnieAbc, AI startup, software development, innovation" />
+    <meta name="author" content="M Titus" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tito-arch.github.io/" />
+    <meta property="og:title" content="M Titus - Fullstack Engineer & Product Designer" />
+    <meta property="og:description" content="Creator of BunnieAbc, co-founder of Calcurious.AI, and passionate about building innovative solutions." />
+    <meta property="og:image" content="https://tito-arch.github.io/assets/Tito-headshot.jpeg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://tito-arch.github.io/" />
+    <meta property="twitter:title" content="M Titus - Fullstack Engineer & Product Designer" />
+    <meta property="twitter:description" content="Creator of BunnieAbc, co-founder @ Calcurious AI, and passionate about building innovative solutions." />
+    <meta property="twitter:image" content="https://tito-arch.github.io/assets/Tito-headshot.jpeg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tito-arch.github.io/" />
+    
     <link
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       rel="stylesheet"
@@ -48,6 +70,13 @@
       .section {
         margin-bottom: 2rem;
       }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
     </style>
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -55,6 +84,129 @@
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "ndm4284r3z");
+  </script>
+  
+  <script>
+    // Projects array definition
+    const projects = [
+    {
+        name: "Lessee & Lessor",
+        link: "https://www.lessee-lessor.com/home/waiting-list",
+        techstack: ["Next","Tailwind CSS","ZOD","Vercel AI SDK", "Vercel"]
+      },
+      {
+        name: "Calcurious AI",
+        link: "https://beta.calcurious.ai",
+        techstack: ["Next","Tailwind CSS","ZOD","TS","REST","Python", "Netlify"]
+      },
+      {
+        name: "Proxima AI App Client",
+        link: "https://app.proximaai.co",
+        techstack: ["Next", "Websockets", "GCP"]
+      },
+      {
+        name: "BunnieAbc Blog",
+        link: "https://babcblog.netlify.app",
+        techstack: ["Next", "AI SDK", "GCP"]
+      },
+      {
+        name: "BunnieAbc ",
+        link: "https://bunnieabc.lessee-lessor.com",
+        techstack: ["Next", "AI SDK", "GCP"]
+      },
+      {
+        name: "Jobs Int&apos;l",
+        techstack: ["Next", "Puppeteer", "Vercel"],
+        link: "https://jobsinternational.net",
+
+      },
+      {
+        name: "Proxima Meet",
+        techstack: ["Next", "Livekit", "TS"],
+        link: "https://meet.proximaai.co",
+
+      }
+  
+    ];
+
+    // Portfolio functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const portfolioGrid = document.getElementById('portfolio-grid');
+      
+      // Clear existing content and make it horizontally scrollable
+      portfolioGrid.innerHTML = '';
+      portfolioGrid.className = 'flex gap-6 overflow-x-auto pb-4 scrollbar-hide';
+      
+      // Generate portfolio cards from projects array
+      projects.forEach(project => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex-shrink-0 w-80';
+        projectCard.innerHTML = `
+          <div class="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center relative">
+            <iframe 
+              src="${project.link}" 
+              class="w-full h-full border-0"
+              loading="lazy"
+              title="${project.name} preview"
+              onload="this.style.display='block'"
+              onerror="this.style.display='none'">
+            </iframe>
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center iframe-fallback">
+              <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-semibold text-lg mb-2 text-gray-900">${project.name}</h3>
+            <div class="flex flex-wrap gap-1 mb-3">
+              ${project.techstack.map(tech => 
+                `<span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">${tech}</span>`
+              ).join('')}
+            </div>
+            <a href="${project.link}" target="_blank" rel="noopener noreferrer" 
+               class="text-blue-600 hover:text-blue-800 text-sm font-medium">
+              View Project →
+            </a>
+          </div>
+        `;
+        
+        portfolioGrid.appendChild(projectCard);
+      });
+      
+      // Hide fallback when iframe loads
+      document.addEventListener('load', function(e) {
+        if (e.target.tagName === 'IFRAME') {
+          const fallback = e.target.parentElement.querySelector('.iframe-fallback');
+          if (fallback) {
+            fallback.style.display = 'none';
+          }
+        }
+      }, true);
+    });
+  </script>
+  
+
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "M Titus",
+    "alternateName": "ihwagi titus",
+    "jobTitle": "Fullstack Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Calcurious.AI"
+    },
+    "description": "Creator of BunnieAbc, co-founder of Calcurious.AI, and passionate about building innovative solutions.",
+    "url": "https://tito-arch.github.io/",
+    "image": "https://tito-arch.github.io/assets/Tito-headshot.jpeg",
+    "sameAs": [
+      "https://bunnieabc.com"
+    ]
+  }
   </script>
   </head>
   <body class="content">
@@ -64,23 +216,25 @@
     </header>
     <!-- Main content -->
     <main>
-      <div class="w-full flex p-2 items-center justify-center">
+      <section class="w-full flex p-2 items-center justify-center">
         <img
           src="assets/Tito-headshot.jpeg"
-          alt="Tito Ihwagi Headshot"
+          alt="Tito Ihwagi Headshot - Fullstack Engineer and Product Designer"
           class="rounded-full"
+          width="200"
+          height="200"
         />
-      </div>
-      <div class="flex-row items-center justify-center text-center gap-2">
+      </section>
+      <section class="flex-row items-center justify-center text-center gap-2">
         <div class="w-full p-2">
           <p>
-            I am the creator of bunnieabc, co-founder of Influencer Championship
-            Boxing News. I also write regularly at bunnieabc.com, also a
+            I am the creator of bunnieabc, co-founder at Calcurious.AI.
+            I also write regularly at bunnieabc.com, also a
             Fullstack Engineer and a product designer.
           </p>
-          <p>Age: 22</p>
+          <p>Age: 23</p>
         </div>
-      </div>
+      </section>
       <article class="section">
         <h2 class="text-2xl mb-2">How I see life</h2>
         <p>
@@ -134,11 +288,21 @@
         </p>
         <p>I love roasting people btw. Thanks for passing by, I love you.</p>
       </article>
-      <foote class="text-center">
-        <p>Life at BunnieAbc ♥️  | Work at BunnieAbc | Blog | L&L | </p>
+      
+      <article class="section">
+        <h2 class="text-2xl mb-4">Projects</h2>
+        <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide" id="portfolio-grid">
+          <!-- Portfolio items will be dynamically generated from projects array -->
+        </div>
+      </article>
+      
+      <footer class="text-center">
+        <nav aria-label="Footer navigation">
+          <p>Life at BunnieAbc ♥️  | Work at BunnieAbc | Blog | L&L | </p>
+        </nav>
         <hr class="m-4"/>
         <p>&copy; Ihwagi 2024 |  Bunnieabc Foundation</p>
-      </foote>
+      </footer>
     </main>
   </body>
 </html>
